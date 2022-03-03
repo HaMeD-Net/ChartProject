@@ -1,0 +1,111 @@
+.site-layout {
+  height: 100vh;
+}
+
+.save {
+  font-size: 23px;
+  color: beige;
+  margin-left: 10px;
+}
+.preview {
+  font-size: 23px;
+  color: beige;
+  margin-left: 10px;
+}
+.new {
+  font-size: 23px;
+  color: beige;
+  margin-left: 10px;
+}
+.concept-container {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  overflow-y: scroll;
+}
+.concept-container li {
+  width: 25%;
+  height: 200px;
+  line-height: 200px;
+  margin: 10px 5px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+.selectedChart {
+  width: 25%;
+  height: 200px;
+  line-height: 200px;
+  margin: 10px 5px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid red;
+}
+.concept-container li.bar {
+  border-radius: 5px;
+  background-color: #1d7c1b;
+  color: #fff;
+}
+.concept-container li.pie {
+  border-radius: 50%;
+  background-color: #ffa500;
+}
+.concept-container li .delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  color: #000;
+  background-color: #cf4040;
+  padding: 5px;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  display: none;
+}
+.concept-container li:hover .delete {
+  display: block;
+}
+.concept-container li.pie .delete {
+  right: 50%;
+  transform: translateX(50%);
+  top: 0;
+}
+.concept-container li.pie .delete:hover {
+  cursor: pointer;
+  transform: translate(15px, 3px) scale(1.2);
+  background-color: #cf404085;
+}
+.concept-container li.bar .delete:hover {
+  cursor: pointer;
+  transform: translate(-3px, 3px) scale(1.2);
+  background-color: #cf404085;
+}
+li.borderd {
+  border: 2px solid #000;
+}
+.report {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.ant-layout-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.SaveAndPreview {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.ant-select {
+  margin-left: 10px;
+}

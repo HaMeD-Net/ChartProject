@@ -1,0 +1,10 @@
+.ant-modal-centered .modalPreview {
+  width: 80% !important;
+  min-height: 80vh;
+}
+.ant-modal-body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
