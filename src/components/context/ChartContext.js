@@ -8,11 +8,11 @@ const ChartProvider = ({ children }) => {
     const [selectedChart, setSelectedChart] = useState(null);
     const [report, setReport] = useState([])
     const [concept, setConcept] = useState([]);
-    const [reportName, setReportName] = useState([])
     const [resetForm, setResetForm] = useState(false)
+    const [localName, setLocalName] = useState([])
 
     return (
-        <Provider value={{ selectedChart, concept, reportName, report, resetForm, setResetForm, setReport, setConcept, setSelectedChart, setReportName }}>
+        <Provider value={{ selectedChart, concept, report, resetForm, localName, setLocalName, setResetForm, setReport, setConcept, setSelectedChart }}>
             {children}
         </Provider>
     );

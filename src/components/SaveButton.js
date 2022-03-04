@@ -3,19 +3,17 @@ import { Modal, Input } from "antd";
 import { ChartContext } from "./context/ChartContext";
 import { useContext, useState } from "react";
 
-const SaveButton = ({ modalVisible, setModalVisible, concept }) => {
-    const { reportName, setReportName, report, setReport } = useContext(ChartContext)
-    const [inputValue, setInputValue] = useState()
+const SaveButton = ({ modalVisible, setModalVisible }) => {
+    const { report, concept, setReport, localName, setConcept, setLocalName } = useContext(ChartContext)
+    const [inputValue, setInputValue] = useState(null);
 
     const handleSaveLocal = () => {
         const localState = JSON.stringify(concept);
         setModalVisible(false)
-        setReportName([...reportName, inputValue])
         localStorage.setItem(inputValue, localState)
+        setLocalName([...localName, inputValue]);
         setInputValue("");
-        const updatedReport = [...report, concept]
-        setReport(updatedReport);
-        console.log("report: ", report);
+        setReport([...report, concept]);
 
     }
 

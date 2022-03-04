@@ -73,7 +73,7 @@ const MyLayout = () => {
         const update = concept.filter((item) => item.id !== id);
         setConcept(update);
     };
-    console.log(concept);
+
     return (
         <Layout>
             <SaveButton
