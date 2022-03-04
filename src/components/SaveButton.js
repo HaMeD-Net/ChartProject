@@ -8,12 +8,14 @@ const SaveButton = ({ modalVisible, setModalVisible }) => {
     const [inputValue, setInputValue] = useState(null);
 
     const handleSaveLocal = () => {
-        const localState = JSON.stringify(concept);
-        setModalVisible(false)
-        localStorage.setItem(inputValue, localState)
-        setLocalName([...localName, inputValue]);
-        setInputValue("");
-        setReport([...report, concept]);
+        if (inputValue && concept.length !== 0) {
+            const localState = JSON.stringify(concept);
+            setModalVisible(false)
+            localStorage.setItem(inputValue, localState)
+            setLocalName([...localName, inputValue]);
+            setInputValue("");
+            setReport([...report, concept]);
+        }
 
     }
 

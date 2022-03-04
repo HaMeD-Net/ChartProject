@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Form, Input, Button } from "antd";
-import { ChartContext } from "./context/ChartContext";
+import { ChartContext } from "../context/ChartContext";
 import "./Inspector.css";
 
 const Inspector = () => {
@@ -13,13 +13,19 @@ const Inspector = () => {
     }, [selectedChart]);
 
     const onFinish = (values) => {
-        console.log(values);
-        const updatedConcept = concept.map((item) =>
-            selectedChart.id === item.id ? { ...item, data: values } : item
-        );
-        setConcept(updatedConcept);
-        form.resetFields();
-        setResetForm(false)
+        if (concept.length !== 0) {
+            const updatedConcept = concept.map((item) =>
+                selectedChart.id === item.id ? { ...item, data: values } : item
+            );
+            setConcept(updatedConcept);
+            form.resetFields();
+            setResetForm(false)
+        }
+        else {
+            alert("You have no chart to determine the values")
+            form.resetFields();
+
+        }
     };
     if (resetForm)
         form.resetFields();

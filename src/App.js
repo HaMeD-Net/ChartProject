@@ -2,7 +2,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import React from "react";
 import { Routes, Route } from "react-router-dom"
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import ChartProvider from './components/context/ChartContext';
 import Report from './components/Report';
 

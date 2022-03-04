@@ -6,7 +6,10 @@ const Report = () => {
 
     const Show = () => {
         if (report.length === 0)
-            return <div>There is nothing to show</div>
+            return <div
+                style={{ height: "100vh", fontSize: 30, paddingTop: 50, backgroundColor: "#ececec" }}>
+                There is nothing to show!
+            </div>
         else
             return JSON.stringify(report)
     }

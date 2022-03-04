@@ -5,7 +5,7 @@ import { Chart, registerables } from "chart.js";
 
 Chart.register(...registerables);
 
-const MyChart = ({ chartData, chartType, key }) => {
+const MyChart = ({ chartData, chartType }) => {
 
     const labels = Object.keys(chartData);
     const chartValues = Object.values(chartData)
@@ -39,8 +39,8 @@ const MyChart = ({ chartData, chartType, key }) => {
     return (
 
 
-        <div style={{ width: "30%", margin: 5 }} key={Math.random() * 100}>
-            {chartType === "bar" ? <Bar data={data} key={Math.random() * 100} /> : <Pie data={data} key={Math.random() * 100} />}
+        <div style={{ width: "30%", margin: 5 }} >
+            {chartType === "bar" ? <Bar data={data} /> : <Pie data={data} />}
         </div>
 
 

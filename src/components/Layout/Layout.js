@@ -12,17 +12,17 @@ import {
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { useContext } from "react";
-import { ChartContext } from "./context/ChartContext";
-import Inspector from "./Inspector";
+import { ChartContext } from "../context/ChartContext";
+import Inspector from "../Inspector/Inspector";
 import "./Layout.css";
-import SaveButton from "./SaveButton";
-import Preview from "./Preview";
-import SelectBox from "./SelectBox";
+import SaveButton from "../SaveButton";
+import Preview from "../Preview/Preview";
+import SelectBox from "../SelectBox";
 
 const { Header, Content, Sider } = Layout;
 
 const MyLayout = () => {
-    const { setSelectedChart, concept, setConcept, setResetForm } = useContext(
+    const { setSelectedChart, selectedChart, concept, setConcept, setResetForm } = useContext(
         ChartContext
     );
 
@@ -133,6 +133,11 @@ const MyLayout = () => {
                                         setSelectedChart(item);
                                     }}
                                     className={item.class}
+                                    style={
+                                        selectedChart?.id === item.id ? { border: "3px solid #000" }
+                                            :
+                                            { border: "none" }
+                                    }
                                 >
                                     {item.name}
                                     <CloseOutlined

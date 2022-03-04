@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Modal } from "antd";
 import "./Preview.css";
-import MyChart from "./MyChart";
-import { ChartContext } from "./context/ChartContext";
+import MyChart from "../MyChart";
+import { ChartContext } from "../context/ChartContext";
 
 
 const Preview = ({ previewVisible, setPreviewVisible }) => {
@@ -21,7 +21,7 @@ const Preview = ({ previewVisible, setPreviewVisible }) => {
             >
 
                 {concept.length !== 0 && concept.map((item) =>
-                    <MyChart chartData={item.data} chartType={item.class} />
+                    <MyChart chartData={item.data} chartType={item.class} key={item.key} />
                 )}
             </Modal>
         </>
